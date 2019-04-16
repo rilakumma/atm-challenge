@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import Pin from "./components/Pin/Pin";
+// import Pin from "./components/Pin/Pin";
 import "./App.css";
+import routes from "./routes";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Welcome Back!</h1>
-        <p>Please enter your pin below:</p>
-        <Pin />
+        {routes}
+        {/* <h1>Welcome Back!</h1>
+        <Pin /> */}
       </div>
     );
   }

@@ -1,7 +1,8 @@
 .App {
-  background: #422769;
+  font-family: "Raleway", sans-serif;
+  background: rgb(240, 240, 240);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
