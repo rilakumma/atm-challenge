@@ -1,0 +1,56 @@
+.dash {
+  font-size: 2em;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.line {
+  margin: 2em 0em;
+  height: 0.9em;
+  width: 95%;
+  border: none;
+  background: #b6be00;
+}
+.top {
+  width: 100%;
+  height: 20%;
+  display: grid;
+  grid-template-columns: repeat(3, 28%);
+  justify-content: center;
+  grid-gap: 5%;
+}
+.account-info {
+  font-size: 1.5em;
+  background: #422769;
+  color: white;
+  /* border: 0.35em solid #422769; */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.quick-cash {
+  width: 100%;
+  height: 40%;
+  display: grid;
+  grid-template-columns: repeat(2, 30%);
+  justify-content: center;
+  grid-gap: 10%;
+}
+.cash {
+  font-size: 1.5em;
+  background: #422769;
+  color: white;
+  /* border: 0.35em solid #422769; */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.success {
+  height: 500px;
+  width: 500px;
+}
+
+.svg {
+  background: #b6be00;
+}

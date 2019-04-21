@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Pin.css";
+// import { Redirect } from "react-router-dom";
 
 export default class Pin extends Component {
   constructor() {
@@ -8,6 +9,7 @@ export default class Pin extends Component {
       currentUser: { name: "Madi", pinNum: "1234" },
       pin: "",
       error: false
+      // toDash: false
     };
   }
   getKey = input => {
@@ -30,8 +32,10 @@ export default class Pin extends Component {
     if (this.state.currentUser.pinNum === this.state.pin) {
       this.setState({
         error: false
+        // toDash: true
       });
-      alert("success");
+      // alert("success");
+      this.props.history.push("/dash", this.state.currentUser);
     } else {
       this.setState({
         error: true
@@ -40,30 +44,36 @@ export default class Pin extends Component {
     this.clearPin();
   };
   render() {
-    const keyPad = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map(key => {
+    const keyPad = [1, 2, 3, 4, 5, 6, 7, 8, 9, "", 0, "Clear"].map(key => {
       return (
         <button key={key} onClick={() => this.getKey(key)} className="key">
           {key}
         </button>
       );
     });
-    const pinDots = this.state.pin.split("").map(el => <span>*</span>);
+    // if (this.state.toDash === true) {
+    //   return <Redirect to="/dash" />;
+    // }
+    const pinDots = this.state.pin.split("").map(el => "*");
     return (
-      <div className="pin-container">
-        <h1>Enter your PIN</h1>
-        <div className="show-pin">{pinDots}</div>
-        <div className="key-pad">
-          {keyPad}
-          <button onClick={() => this.clearPin()} className="key clear">
-            Clear
-          </button>
+      <div className="pin">
+        <div className="col-one">
+          <h1 className="pin-title">Enter Your Pin.</h1>
+          <h2 className="pin-msg">Please enter your 4-digit pin to access your account</h2>
         </div>
-        <button onClick={() => this.enterPin()}>Enter</button>
-        {this.state.error && (
-          <div>
-            <p>Incorrect PIN, please try again.</p>
+        <div className="pin-container">
+          <div className="show-pin">{pinDots}</div>
+          <div className="key-pad">{keyPad}</div>
+          <div className="error">{this.state.error && <p>Incorrect PIN, please try again.</p>}</div>
+          <div className="bottom-keys">
+            <button onClick={() => this.clearPin()} className="key clear">
+              Clear
+            </button>
+            <button onClick={() => this.enterPin()} className="key enter">
+              Enter
+            </button>
           </div>
-        )}
+        </div>
       </div>
     );
   }
