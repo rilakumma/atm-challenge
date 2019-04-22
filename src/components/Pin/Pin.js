@@ -6,7 +6,7 @@ export default class Pin extends Component {
   constructor() {
     super();
     this.state = {
-      currentUser: { name: "Madi", pinNum: "1234" },
+      currentUser: { name: "Madison Walmsley", pinNum: 1234, checking: 12345.67, savings: 9876.54 },
       pin: "",
       error: false
       // toDash: false
@@ -20,6 +20,9 @@ export default class Pin extends Component {
     this.setState({
       pin: inputs
     });
+    if (input === "Clear") {
+      this.clearPin();
+    }
   };
 
   clearPin = () => {
@@ -29,12 +32,10 @@ export default class Pin extends Component {
   };
 
   enterPin = () => {
-    if (this.state.currentUser.pinNum === this.state.pin) {
+    if (this.state.currentUser.pinNum == this.state.pin) {
       this.setState({
         error: false
-        // toDash: true
       });
-      // alert("success");
       this.props.history.push("/dash", this.state.currentUser);
     } else {
       this.setState({
@@ -46,7 +47,7 @@ export default class Pin extends Component {
   render() {
     const keyPad = [1, 2, 3, 4, 5, 6, 7, 8, 9, "", 0, "Clear"].map(key => {
       return (
-        <button key={key} onClick={() => this.getKey(key)} className="key">
+        <button key={key} onClick={() => this.getKey(key)} className={`k-${key} key`}>
           {key}
         </button>
       );
@@ -65,14 +66,10 @@ export default class Pin extends Component {
           <div className="show-pin">{pinDots}</div>
           <div className="key-pad">{keyPad}</div>
           <div className="error">{this.state.error && <p>Incorrect PIN, please try again.</p>}</div>
-          <div className="bottom-keys">
-            <button onClick={() => this.clearPin()} className="key clear">
-              Clear
-            </button>
-            <button onClick={() => this.enterPin()} className="key enter">
-              Enter
-            </button>
-          </div>
+
+          <button onClick={() => this.enterPin()} className="key enter">
+            Enter
+          </button>
         </div>
       </div>
     );
