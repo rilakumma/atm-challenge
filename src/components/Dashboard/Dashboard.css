@@ -5,16 +5,6 @@
   color: white;
   display: grid;
   grid-template-columns: 27% 73%;
-  /* grid-template-columns: 552px 1496px; */
-  /* grid-template-columns: 30% 70%; */
-}
-.account-info {
-  font-size: 30px;
-  background: white;
-  color: black;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
 }
 .icon {
   height: 246px;
@@ -25,7 +15,88 @@
   justify-content: center;
   align-items: center;
 }
+.account-title {
+  color: #422769;
+  font-size: 78px;
+}
+.current {
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+}
+.account-info {
+  font-size: 30px;
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
 .account {
   height: 229px;
+  width: 100%;
   background: #6b5293;
+}
+.return {
+  width: 457px;
+  height: 113px;
+  background: #422769;
+  border-radius: 10px;
+  font-size: 52px;
+  font-weight: 600;
+  color: #b6be00;
+}
+.overview {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.greeting {
+  font-size: 112px;
+  width: 95%;
+  display: grid;
+  grid-template-columns: 75% 25%;
+}
+.top-container {
+  width: 1319px;
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: 50% 50%;
+}
+.actions {
+  height: 368px;
+  width: 592px;
+  background: #6b5293;
+  border-radius: 25px;
+}
+.fast-title {
+  font-style: italic;
+  font-size: 77px;
+  align-self: flex-start;
+  margin-left: 100px;
+  margin-bottom: 10px;
+}
+.fast-cash {
+  width: 1319px;
+  height: 303px;
+  background: #6b5293;
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  justify-content: center;
+  align-items: center;
+}
+
+.cash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  font-size: 109px;
+  border-right: 5px solid #b6be00;
+}
+.last {
+  border: none;
 }

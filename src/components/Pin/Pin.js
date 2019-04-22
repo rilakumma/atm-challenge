@@ -6,7 +6,7 @@ export default class Pin extends Component {
   constructor() {
     super();
     this.state = {
-      currentUser: { name: "Madison Walmsley", pinNum: 1234, checking: 12345.67, savings: 9876.54 },
+      currentUser: { name: "Madison Walmsley", pinNum: "1234", checking: 12345.67, savings: 9876.54 },
       pin: "",
       error: false
       // toDash: false
@@ -32,7 +32,7 @@ export default class Pin extends Component {
   };
 
   enterPin = () => {
-    if (this.state.currentUser.pinNum == this.state.pin) {
+    if (this.state.currentUser.pinNum === this.state.pin) {
       this.setState({
         error: false
       });
