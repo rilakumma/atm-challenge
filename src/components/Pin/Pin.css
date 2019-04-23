@@ -3,25 +3,24 @@
   height: 100vh;
   width: 100%;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 45% 55%;
 }
 /* left column */
 .col-one {
-  /* height: 100%; */
   padding: 0;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 .pin-title {
   margin: 0px 0px;
-  width: 80%;
+  width: 85%;
   font-size: 175px;
 }
 .pin-msg {
-  margin: 0px 0px;
-  width: 80%;
+  margin: 100px 0px;
+  width: 85%;
   font-size: 56px;
 }
 /* right column */
@@ -33,36 +32,47 @@
   flex-direction: column;
 }
 .show-pin {
-  /* width: 90%; */
-  width: 701px;
+  width: 750px;
   height: 147px;
   background: #6b5293;
   color: #b6be00;
   border-radius: 20px;
-  font-size: 250px;
-  text-align: center;
+  font-size: 123px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+span {
+  height: 70px;
+  margin: 20px;
 }
 .key-pad {
-  /* width: 90%; */
-  width: 701px;
+  width: 750px;
   height: 50%;
   display: grid;
   grid-template-columns: repeat(3, 33%);
   justify-content: center;
+  margin: 25px 0px;
 }
+/* key pad borders... */
 .k-2,
 .k-5,
 .k-8,
 .k-0 {
-  border-style: solid;
-  border-color: #b6be00;
-  border-width: 0px 5px;
-  border-bottom: solid 5px #b6be00;
+  border-bottom: solid 3px #b6be00;
 }
 .k-2::after,
 .k-5::after,
 .k-8::after,
 .k-0::after {
+  content: "";
+  border-right: #b6be00 3px solid;
+  border-left: #b6be00 3px solid;
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 0px;
+  right: 0px;
 }
 .k-0 {
   border-bottom: none;
@@ -70,8 +80,9 @@
 .k-1,
 .k-4,
 .k-7 {
-  border-bottom: solid 5px #b6be00;
+  border-bottom: solid 3px #b6be00;
   border-left: none;
+  border-right: none;
 }
 .k- {
   border-left: none;
@@ -80,25 +91,28 @@
 .k-3,
 .k-6,
 .k-9 {
-  border-bottom: solid 5px #b6be00;
+  border-bottom: solid 3px #b6be00;
   border-right: none;
+  border-left: none;
 }
 .k-Clear {
   border-bottom: none;
   border-right: none;
+  font-size: 52px !important;
 }
 .key {
   border-top: none;
+  border-left: none;
+  border-right: none;
   background: none;
   outline: none;
   cursor: pointer;
   color: white;
   font-size: 85px;
+  position: relative;
 }
-
 .enter {
-  /* width: 90%; */
-  width: 701px;
+  width: 750px;
   height: 147px;
   background: #b6be00;
   color: #422769;

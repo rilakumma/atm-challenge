@@ -55,7 +55,7 @@ export default class Pin extends Component {
     // if (this.state.toDash === true) {
     //   return <Redirect to="/dash" />;
     // }
-    const pinDots = this.state.pin.split("").map(el => "*");
+    const pinDots = this.state.pin.split("").map(el => <span>*</span>);
     return (
       <div className="pin">
         <div className="col-one">
