@@ -6,7 +6,12 @@ export default class Pin extends Component {
   constructor() {
     super();
     this.state = {
-      currentUser: { name: "Madison Walmsley", pinNum: "1234", checking: 12345.67, savings: 9876.54 },
+      currentUser: {
+        name: "Madison Walmsley",
+        pinNum: "1234",
+        checking: { accNum: 1111222233334444, balance: 12345.67 },
+        savings: { accNum: 5555666677778888, balance: 9876.54 }
+      },
       pin: "",
       error: false
       // toDash: false
@@ -52,9 +57,6 @@ export default class Pin extends Component {
         </button>
       );
     });
-    // if (this.state.toDash === true) {
-    //   return <Redirect to="/dash" />;
-    // }
     const pinDots = this.state.pin.split("").map(el => <span>*</span>);
     return (
       <div className="pin">
@@ -65,7 +67,7 @@ export default class Pin extends Component {
         <div className="pin-container">
           <div className="show-pin">{pinDots}</div>
           <div className="key-pad">{keyPad}</div>
-          <div className="error">{this.state.error && <p>Incorrect PIN, please try again.</p>}</div>
+          <div className="pin-err">{this.state.error && <p className="plsshake">Incorrect PIN, please try again.</p>}</div>
 
           <button onClick={() => this.enterPin()} className="key enter">
             Enter
