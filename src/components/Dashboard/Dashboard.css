@@ -3,12 +3,15 @@
   width: 100vw;
   font-size: 78px;
   color: white;
-  display: grid;
-  grid-template-columns: 27% 73%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
 }
 .icon {
-  height: 246px;
-  width: 246px;
+  height: 250px;
+  width: 250px;
   border-radius: 100%;
   background: #b6be00;
   display: flex;
@@ -17,6 +20,10 @@
   margin: auto;
   margin-bottom: 30px;
   padding: 5px;
+}
+.top-icon {
+  height: 220px;
+  width: 220px;
 }
 .imgs {
   height: 171px;
@@ -30,27 +37,31 @@
   margin-top: 30px;
 }
 .account-title {
+  font-weight: 500;
   color: #422769;
-  font-size: 78px;
+  font-size: 64px;
 }
 .current {
   width: 100%;
   text-align: center;
+  color: black;
   font-size: 30px;
+  line-height: 38px;
+  margin-bottom: 10px;
 }
 .account-info {
   position: absolute;
-  width: 27%;
-  height: 100%;
+  width: 100%;
+  height: 23%;
   font-size: 30px;
   background: white;
-  color: black;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  flex-direction: column;
 }
 .acc-start {
+  width: 100%;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,63 +73,72 @@
 }
 .account {
   padding: 8px 15px;
-  height: 205px;
+  height: 230px;
+  width: 400px;
+  border-radius: 25px;
   background: #6b5293;
   color: white;
-  font-size: 74px;
+  font-size: 57px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 }
-label {
-  margin-left: 10px;
+.label {
+  width: 430px;
+  text-align: center;
+  font-size: 43px;
+  margin-bottom: 2px;
 }
 .acc-num {
   color: #b6be00;
-  font-size: 30px;
+  font-size: 35px;
   align-self: flex-end;
+  margin-top: 5px;
+  margin-right: 5px;
 }
 .balance {
   margin: auto;
 }
 .return {
   cursor: pointer;
-  width: 457px;
+  align-self: flex-end;
+  margin-right: 95px;
+  width: 30%;
   height: 113px;
-  color: white;
+  color: #422769;
   border-radius: 10px;
-  font-size: 52px;
+  font-size: 55px;
   font-weight: 600;
   background: #b6be00;
 }
 .overview {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  top: 27%;
+  height: 69%;
+  width: 100%;
+}
+.greeting {
+  font-size: 100px;
+  line-height: 110px;
+  width: 85%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex-direction: column;
-  height: 100%;
-  position: absolute;
-  left: 27%;
-  width: 73%;
-}
-.greeting {
-  font-size: 107px;
-  /* width: 90%; */
-  width: 1319px;
-  display: grid;
-  grid-template-columns: 75% 25%;
 }
 .top-container {
-  width: 1319px;
-  /* width: 96%; */
+  width: 96%;
   justify-items: center;
   display: grid;
   grid-template-columns: 50% 50%;
 }
 .actions {
   height: 368px;
-  width: 592px;
+  width: 80%;
   background: #6b5293;
   border-radius: 25px;
   font-size: 50px;
@@ -130,14 +150,20 @@ label {
 }
 .fast-title {
   font-style: italic;
-  font-size: 77px;
+  font-size: 70px;
   align-self: flex-start;
-  margin-left: 100px;
   margin-bottom: 10px;
+  justify-self: start;
+  margin-left: 100px;
+}
+.fast-cont {
+  width: 100%;
+  display: grid;
+  justify-items: center;
 }
 .fast-cash {
-  width: 1319px;
-  height: 303px;
+  width: 88%;
+  height: 320px;
   background: #6b5293;
   border-radius: 25px;
   display: grid;
@@ -151,7 +177,7 @@ label {
   justify-content: center;
   align-items: center;
   height: 80%;
-  font-size: 109px;
+  font-size: 100px;
   border-right: 5px solid #b6be00;
 }
 .last {
@@ -159,64 +185,58 @@ label {
 }
 
 /* Error message */
-.cash-error {
-  position: relative;
-  height: 100%;
-  width: 100vw;
-  background: none;
-  display: flex;
-  align-items: flex-end;
-}
-.content {
-  background: rgba(255, 255, 255, 0.979);
-  position: relative;
-  height: 25%;
-  width: 100%;
-  border-top: 5px solid #b6be00;
+
+.err-content {
+  position: absolute;
+  animation: fadeIn 0.3s ease-in;
+  height: 28%;
+  width: 70%;
+  border-radius: 25px;
   color: #422769;
-  display: grid;
-  grid-template-columns: 10% 20% 70%;
-  align-content: center;
-  padding: 0px 2%;
-  animation: fadeIn 0.5s ease-in;
+  background: rgba(255, 255, 255, 0.979);
+  border: 15px solid #b6be00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .x {
   cursor: pointer;
-  z-index: 5;
   position: absolute;
-  right: 10px;
+  right: 15px;
   top: 0;
   color: #b6be00;
 }
+.hold {
+  width: 85%;
+  display: flex;
+}
 .oops {
-  font-size: 130px;
+  font-size: 150px;
 }
 .message {
+  margin-top: 20px;
+  width: 85%;
   font-size: 54px;
 }
 .flying {
-  height: 100%;
   align-self: start;
+  margin-bottom: 20px;
 }
 
 @keyframes fadeIn {
   0% {
-    height: 0;
     opacity: 0;
   }
-  50% {
-    opacity: 0.3;
-  }
   100% {
-    height: 25%;
     opacity: 1;
   }
 }
 /* Dispensing popup */
-.success {
+.pop {
   top: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.719);
+  background: rgba(0, 0, 0, 0.4);
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -224,19 +244,22 @@ label {
   align-items: center;
   position: relative;
 }
-.disp-content {
-  height: 60%;
-  width: 60%;
+.succ-content {
+  animation: fadeIn 0.3s ease-in;
+  height: 40%;
+  width: 73%;
   border-radius: 25px;
-  color: #b6be00;
-
-  background: #422769;
+  color: #422769;
+  background: rgba(255, 255, 255, 0.979);
+  border: 15px solid #b6be00;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 2%;
+  font-size: 77px;
+  line-height: 87px;
 }
 .moneys {
   height: 380px;
+  margin: 25px 0px;
 }

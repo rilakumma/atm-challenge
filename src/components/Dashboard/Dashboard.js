@@ -7,8 +7,8 @@ import fast from "../../icons/zoom.png";
 import morning from "../../icons/morning.png";
 import afternoon from "../../icons/afternoon.png";
 import evening from "../../icons/evening.png";
-import flying from "../../icons/flying.png";
-import sparkle from "../../icons/sparklemoney (1).png";
+import flying from "../../icons/flying2.png";
+import sparkle from "../../icons/sparkle.png";
 
 export default class Dashboard extends Component {
   constructor() {
@@ -66,35 +66,32 @@ export default class Dashboard extends Component {
       <div className="dash">
         <div className="account-info">
           <div className="acc-start">
-            <div className="icon">
+            <div className="icon top-icon">
               <img src={stacks} alt="money icon" className="imgs" />
             </div>
             <h1 className="account-title">Your Account</h1>
-            <h3 className="current">As of {this.state.date}</h3>
+            <h3 className="current">as of {this.state.date}</h3>
           </div>
           <div className="details">
-            <label>Checking Account Balance</label>
+            <p className="label">Checking Account</p>
             <div className="account">
               <p className="acc-num">...{this.formatAccNum(checking.accNum)}</p>
               <p className="balance">${checking.balance.toLocaleString()}</p>
             </div>
           </div>
           <div className="details">
-            <label>Savings Account Balance</label>
+            <p className="label">Savings Account</p>
             <div className="account">
               <p className="acc-num">...{this.formatAccNum(savings.accNum)}</p>
               <p className="balance">${savings.balance.toLocaleString()}</p>
             </div>
           </div>
-          <button className="return" onClick={() => alert("Returning card...")}>
-            Return Card
-          </button>
         </div>
 
         <div className="overview">
           <div className="greeting">
             <h1>
-              Good {this.state.tod}, {name}.
+              Good {this.state.tod}, <br /> {name}.
             </h1>
             {this.state.tod === "Morning" ? (
               <img src={morning} alt="good morning icon" />
@@ -118,7 +115,7 @@ export default class Dashboard extends Component {
               </div>
             </div>
           </div>
-          <div>
+          <div className="fast-cont">
             <div className="fast-title">
               <img src={fast} alt="fast cash" />
               <span>Fast Cash</span>
@@ -138,15 +135,20 @@ export default class Dashboard extends Component {
               </div>
             </div>
           </div>
+          <button className="return" onClick={() => alert("Returning card...")}>
+            Return Card
+          </button>
         </div>
         {this.state.error && (
-          <div className="cash-error">
-            <div className="content">
+          <div className="pop">
+            <div className="err-content">
               <span className="x" onClick={() => this.toggleError()}>
                 x
               </span>
-              <img src={flying} alt="flying away" className="flying" />
-              <h1 className="oops">Oops!</h1>
+              <div className="hold">
+                <img src={flying} alt="flying away" className="flying" />
+                <h1 className="oops">Oops!</h1>
+              </div>
               <p className="message">
                 There is not enough cash in the ATM to fulfill your request at this time. We apologize for the inconvenience.
               </p>
@@ -154,11 +156,11 @@ export default class Dashboard extends Component {
           </div>
         )}
         {this.state.dispense && (
-          <div className="success">
-            <div className="disp-content">
-              <h1>Remember to take your card.</h1>
-              <h1>Cash is dispensing.</h1>
+          <div className="pop">
+            <div className="succ-content">
+              <p>Cash is dispensing.</p>
               <img src={sparkle} alt="dispense money icon" className="moneys" />
+              <p>Remember to take your card.</p>
               <p>Have a great day!</p>
             </div>
           </div>

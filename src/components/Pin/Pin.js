@@ -57,12 +57,12 @@ export default class Pin extends Component {
         </button>
       );
     });
-    const pinDots = this.state.pin.split("").map(el => <span>*</span>);
+    const pinDots = this.state.pin.split("").map((el, i) => <span key={i}>*</span>);
     return (
       <div className="pin">
         <div className="col-one">
           <h1 className="pin-title">Enter Your Pin.</h1>
-          <h2 className="pin-msg">Please enter your 4-digit pin to access your account</h2>
+          <h2 className="pin-msg">Please enter your 4-digit pin to access your account.</h2>
         </div>
         <div className="pin-container">
           <div className="show-pin">{pinDots}</div>
